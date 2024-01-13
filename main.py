@@ -18,7 +18,7 @@ def generate_maze(maze, n):
 
 # this function is tell that path is exist or not, if exist so, which is shorter path:
 def find_path(maze):
-    queue = [((0, 0), [])]
+    queue = [((0, 0), [])] # inside queue taking x, y index and paths 
     visited = set()
 
     while queue:
