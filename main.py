@@ -1,18 +1,18 @@
 from colorama import Fore, Style
 import random
 
-print("Enter size on maze")
-n = int(input())
+# print("Enter size on maze")
+# n = int(input())
 
-start = (Fore.GREEN + "S" + Style.RESET_ALL)
-wall = (Fore.RED + "▓" + Style.RESET_ALL)
-open = (Fore.BLUE + "◌" + Style.RESET_ALL)
-path = (Fore.GREEN + "◍" + Style.RESET_ALL)
-end = (Fore.GREEN + "E" + Style.RESET_ALL)
-percent = (n * n) * (1 / 4)
-percent = int(percent)
+# start = (Fore.GREEN + "S" + Style.RESET_ALL)
+# wall = (Fore.RED + "▓" + Style.RESET_ALL)
+# open = (Fore.BLUE + "◌" + Style.RESET_ALL)
+# path = (Fore.GREEN + "◍" + Style.RESET_ALL)
+# end = (Fore.GREEN + "E" + Style.RESET_ALL)
+# percent = (n * n) * (1 / 4)
+# percent = int(percent)
 
-maze = []
+# maze = []
 
 
 def mazes(maze, n):
@@ -60,12 +60,69 @@ def display_maze(maze, n):
         print()
 
 
-mazes(maze, n)
-found, paths = find_path(maze)
-if found:
-    mark_path(maze, paths)
-print(found)
+# mazes(maze, n)
+# found, paths = find_path(maze)
+# if found:
+#     mark_path(maze, paths)
+# print(found)
 
+# display_maze(maze, n)
+
+n = int(input("Enter the size of the maze (n x n): "))
+start = (Fore.GREEN + "S" + Style.RESET_ALL)
+wall = (Fore.RED + "▓" + Style.RESET_ALL)
+open = (Fore.BLUE + "◌" + Style.RESET_ALL)
+path = (Fore.GREEN + "◍" + Style.RESET_ALL)
+end = (Fore.GREEN + "E" + Style.RESET_ALL)
+percent = (n * n) * (1 / 4)
+percent = int(percent)
+
+maze = []
+
+print("Generated Maze:")
+print()
+mazes(maze, n)
 display_maze(maze, n)
+print()       
+while True:
+    print("1. Print the path")
+    print("2. Generate another puzzle")
+    print("3. Exit the Game")
+
+    choose = int(input("Enter you choice 1/2/3: "))
+    print()
+    if choose==1:
+        found, paths = find_path(maze)
+        if found:
+            mark_path(maze, paths)
+            print("Maze with Path:")
+            print("Path found: ")
+            print()
+            display_maze(maze, n)
+        else:
+            print("Path not found!")
+        print()
+
+    if choose==2:
+        n = int(input("Enter the size of the maze (n x n): "))
+        start = (Fore.GREEN + "S" + Style.RESET_ALL)
+        wall = (Fore.RED + "▓" + Style.RESET_ALL)
+        open = (Fore.BLUE + "◌" + Style.RESET_ALL)
+        path = (Fore.GREEN + "◍" + Style.RESET_ALL)
+        end = (Fore.GREEN + "E" + Style.RESET_ALL)
+        percent = (n * n) * (1 / 4)
+        percent = int(percent)
+        maze = []
+        print("Generated Maze:")
+        print()
+        mazes(maze, n)
+        display_maze(maze, n)
+        print()
+
+
+    if choose==3:
+        break
+
+
 
 
