@@ -31,7 +31,7 @@ def find_path(maze):
                 queue.append(((nx, ny), path + [(x, y)]))
                 visited.add((nx, ny))
 
-    return False, []
+    return False, []  # if path is not found so return False
 
 
 # the help of this function, show the path of maze from start to end:
