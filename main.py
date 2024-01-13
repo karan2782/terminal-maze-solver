@@ -124,9 +124,9 @@ while True:
         display_maze(maze, n)
         print()
 
-
     if choose==3:
         break
+
 
 
 print((Fore.GREEN + "Thanks For Playing!" + Style.RESET_ALL))
