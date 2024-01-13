@@ -1,21 +1,8 @@
-from colorama import Fore, Style
-import random
+from colorama import Fore, Style  # import for colour
+import random 
 
-# print("Enter size on maze")
-# n = int(input())
-
-# start = (Fore.GREEN + "S" + Style.RESET_ALL)
-# wall = (Fore.RED + "▓" + Style.RESET_ALL)
-# open = (Fore.BLUE + "◌" + Style.RESET_ALL)
-# path = (Fore.GREEN + "◍" + Style.RESET_ALL)
-# end = (Fore.GREEN + "E" + Style.RESET_ALL)
-# percent = (n * n) * (1 / 4)
-# percent = int(percent)
-
-# maze = []
-
-
-def mazes(maze, n):
+# this function is generating maze
+def generate_maze(maze, n):
     for i in range(n):
         r = []
         for j in range(n):
@@ -29,6 +16,7 @@ def mazes(maze, n):
     maze[n - 1][n - 1] = end
 
 
+# this function is tell that path is exist or not, if exist so, which is shorter path:
 def find_path(maze):
     queue = [((0, 0), [])]
     visited = set()
@@ -46,13 +34,14 @@ def find_path(maze):
     return False, []
 
 
+# the help of this function, show the path of maze from start to end:
 def mark_path(maze, paths):
     for x, y in paths:
         maze[x][y] = path
     maze[0][0] = start
     maze[n-1][n-1] = end
 
-
+# display_maze function  is print maze in the terminal: 
 def display_maze(maze, n):
     for i in range(n):
         for j in range(n):
@@ -60,30 +49,40 @@ def display_maze(maze, n):
         print()
 
 
-# mazes(maze, n)
-# found, paths = find_path(maze)
-# if found:
-#     mark_path(maze, paths)
-# print(found)
-
-# display_maze(maze, n)
-
+# here user is taking input:
 n = int(input("Enter the size of the maze (n x n): "))
+
+# start "S" 
 start = (Fore.GREEN + "S" + Style.RESET_ALL)
+
+# wall in maze
 wall = (Fore.RED + "▓" + Style.RESET_ALL)
+
+# open space in maze
 open = (Fore.BLUE + "◌" + Style.RESET_ALL)
+
+# path to reach end
 path = (Fore.GREEN + "◍" + Style.RESET_ALL)
+
+# end of maze
 end = (Fore.GREEN + "E" + Style.RESET_ALL)
+
+# wall of percentage must be equal to 25% of total cells, so 25% = 1/4
 percent = (n * n) * (1 / 4)
+
+# convert percentage float to interget with help of int funtion int()
 percent = int(percent)
 
+# maze array
 maze = []
 
 print("Generated Maze:")
 print()
-mazes(maze, n)
+generate_maze(maze, n)
 display_maze(maze, n)
-print()       
+print() 
+
+# run while true loop so that user can take repeatedly input and perform task easily on maze:
 while True:
     print("1. Print the path")
     print("2. Generate another puzzle")
@@ -115,7 +114,7 @@ while True:
         maze = []
         print("Generated Maze:")
         print()
-        mazes(maze, n)
+        generate_maze(maze, n)
         display_maze(maze, n)
         print()
 
@@ -124,5 +123,6 @@ while True:
         break
 
 
-
+print("Thanks For Playing!")
+print()
 
