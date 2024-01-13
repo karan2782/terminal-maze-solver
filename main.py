@@ -43,29 +43,35 @@ def mark_path(maze, paths):
 
 # display_maze function  is print maze in the terminal: 
 def display_maze(maze, n):
+
+    fence = (Fore.RED + "+---" + Style.RESET_ALL) # boundary of maze
+
     for i in range(n):
+        print(fence*n)
+        print("| ", end="")
         for j in range(n):
             print(maze[i][j], end=" | ")
         print()
+    print(fence*n)
 
 
 # here user is taking input:
 n = int(input("Enter the size of the maze (n x n): "))
 
 # start "S" 
-start = (Fore.GREEN + "S" + Style.RESET_ALL)
+start = (Fore.GREEN + "S" + Style.RESET_ALL) # color is green
 
 # wall in maze
-wall = (Fore.RED + "▓" + Style.RESET_ALL)
+wall = (Fore.RED + "▓" + Style.RESET_ALL) # red color
 
 # open space in maze
-open = (Fore.BLUE + "◌" + Style.RESET_ALL)
+open = (Fore.BLUE + "◌" + Style.RESET_ALL) # blue color
 
 # path to reach end
-path = (Fore.GREEN + "◍" + Style.RESET_ALL)
+path = (Fore.GREEN + "◍" + Style.RESET_ALL) # green color
 
 # end of maze
-end = (Fore.GREEN + "E" + Style.RESET_ALL)
+end = (Fore.GREEN + "E" + Style.RESET_ALL) # green color
 
 # wall of percentage must be equal to 25% of total cells, so 25% = 1/4
 percent = (n * n) * (1 / 4)
@@ -123,6 +129,6 @@ while True:
         break
 
 
-print("Thanks For Playing!")
+print((Fore.GREEN + "Thanks For Playing!" + Style.RESET_ALL))
 print()
 
