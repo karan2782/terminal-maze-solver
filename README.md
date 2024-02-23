@@ -18,7 +18,7 @@ After clone run this program on your system
 
 ![App Screenshot](https://github.com/karan2782/portfolio-repo/blob/main/maze.png)
 
-![App Screenshot](![App Screenshot](https://github.com/karan2782/portfolio-repo/blob/main/maze.png))
+(![App Screenshot]()
 
 
 
