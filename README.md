@@ -18,7 +18,7 @@ After clone run this program on your system
 
 ![App Screenshot](https://github.com/karan2782/portfolio-repo/blob/main/maze.png)
 
-(![App Screenshot](Screenshot 2024-02-23 131200.png)
+(![App Screenshot](https://github.com/karan2782/terminal-maze-solver/blob/main/Screenshot%202024-02-23%20131200.png)
 
 
 
